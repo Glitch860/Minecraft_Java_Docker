@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  minecraft-java:
+    image: itzg/minecraft-server
+    container_name: minecraft-java
+    restart: always
+    ports:
+      - "25565:25565"
+    environment:
+      - EULA=TRUE
+      - MOTD=My Minecraft Server
+      - DIFFICULTY=normal
+      - GAMEMODE=survival
+      - PVP=true
+      - LEVEL_TYPE=default
+      - LEVEL_SEED=
+      - ENABLE_COMMAND_BLOCK=false
+    volumes:
+      - "./data:/data"
